@@ -12,17 +12,18 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //color of the bottom bar-slight gray
         tabBar.barTintColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1.0)
-        tabBar.tintColor = UIColor(red: 183/255, green: 65/255, blue: 136/255, alpha: 1.0)
+        //color icons when selected
+        tabBar.tintColor = UIColor(red: 63/255, green: 63/255, blue: 63/255, alpha: 0.7)
         tabBar.isTranslucent = false
         // Do any additional setup after loading the view.
         
         let EViewController = EventsViewController()
-        EViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "event"), selectedImage: UIImage(named: "SelectedEvent"))
+        EViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Event"), selectedImage: UIImage(named: "SelectedEvent"))
                
         let PViewController = PactsViewController()
-        PViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "greyEvent"), selectedImage: UIImage(named: "SelectedPacts"))
+        PViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Pacts"), selectedImage: UIImage(named: "SelectedPacts"))
         
         let tabBarList = [EViewController, PViewController]
         
