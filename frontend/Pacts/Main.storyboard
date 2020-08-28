@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIP-7T-UbV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Events-->
+        <scene sceneID="Qdy-ho-lkt">
+            <objects>
+                <viewController id="Lgu-8a-Gky" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZDB-9d-kVT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u01-xH-CSF">
+                                <rect key="frame" x="20" y="66" width="254" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Upcoming Events">
+                                        <attributes>
+                                            <font key="NSFont" size="30" name="Helvetica-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuK-sy-TR1">
+                                <rect key="frame" x="20" y="109" width="53" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Today">
+                                        <attributes>
+                                            <color key="NSColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" metaFont="system" size="20"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nKe-Cr-Pgn"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Events" image="Events" id="za9-LO-pbW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2CE-tk-kpd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="-42"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MaB-2U-MQF">
+            <objects>
+                <tabBarController id="zIP-7T-UbV" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TtC-Po-to6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Lgu-8a-Gky" kind="relationship" relationship="viewControllers" id="gc2-Zw-FdN"/>
+                        <segue destination="R04-2Q-b2S" kind="relationship" relationship="viewControllers" id="LeS-Yg-8ye"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9tQ-ES-vgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="396"/>
+        </scene>
+        <!--Pacts-->
+        <scene sceneID="bgi-7g-SDK">
+            <objects>
+                <viewController id="R04-2Q-b2S" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j7o-Up-egl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="F4J-qk-UNe"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pacts" image="Pacts" id="vII-m4-gZ4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oze-R1-AGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="874"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Events" width="31" height="31"/>
+        <image name="Pacts" width="33" height="32"/>
+    </resources>
+</document>
