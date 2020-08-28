@@ -48,6 +48,11 @@ def delete_user(user_id):
     return user.serialize()
 
 def log_in(user_email, user_password):
+    user = User.query.filter_by(email=user_email).first()
+    if (user.password != user_password):
+        return None
+    return user.serialize()
+
 
 ######################################################################################################
 #Group
