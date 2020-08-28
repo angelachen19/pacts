@@ -108,16 +108,17 @@ def delete_group(group_id):
     db.session.commit()
     return group.serialize()
 
-def get_messages_in_group(group_id):
-    group = group.query.filter_by(id=channel_id).first()
-    if group is None:
-        return None
-    return []########todo
+# def get_messages_in_group(group_id):
+#     group = group.query.filter_by(id=channel_id).first()
+#     if group is None:
+#         return None
+#     return []########todo
 
 
 
 ######################################################################################################
-#Activity
+#Activity 
+#This stuff is all on the dev side
 def get_all_activities():
     return [w.serialize() for w in Activity.query.all()]
 
@@ -126,6 +127,18 @@ def get_activity_by_id():
     if group is None:
         return None
     return group.serialize()
+
+def create_activity(): 
+    activity = Activity.query.filter_by(id=user_id).first()
+    if user is None:
+        return None
+    new_group = Group(
+        name=name,
+        organizer=organizer_id #should is save id? or user itself?
+    )
+    db.session.add(new_group)
+    db.session.commit()
+    return new_group.serialize()
 
 def update_activity():
     activity = Activity.query.filter_by(id=channel_id).first()
@@ -145,44 +158,72 @@ def delete_activity():
     activity = Activity.query.filter_by(id=activity_id).first()
     if activity is None:
         return None
-    db.session.delete(groups)
+    db.session.delete(activity)
     db.session.commit()
     return group.serialize()
 
 ######################################################################################################
 #Message
-def get_all_messages():
+# def get_all_messages():
 
-def get_message_by_id():
+# def get_message_by_id():
 
-def get_messages_in_group(group_id): #need polls here too...should id do this in db?
+# def get_messages_in_group(group_id): #need polls here too...should id do this in db?
 
-def create_message(sender_id, content, group_id):
+# def create_message(sender_id, content, group_id):
 
-def delete_message_by_id(message_id):
+# def delete_message_by_id(message_id):
 
 
 ######################################################################################################
 #Poll
-def get_all_polls():
+# def get_all_polls():
 
-def get_poll_by_id(poll_id)
+# def get_poll_by_id(poll_id)
 
-def get_poll_in_group(group_id):
+# def get_poll_in_group(group_id):
 
-def create_poll(group_id):
+# def create_poll(group_id):
 
+# def change_poll_status(poll_id):
 
 ######################################################################################################
 #Event
 def get_all_events():
+    return [w.serialize() for w in Event.query.all()]
 
 def get_event_by_id(event_id)
+    event = Event.query.filter_by(id=Event_id).first()
+    if event is None:
+        return None
+    return event.serialize()
 
 def get_events_in_group(group_id):
+    event = Event.query.filter_by(id=event_id).first()
+    if event is None:
+        return None
+    return [m.serialize() for m in channel.messages]
 
-def create_event(group_id):
+def create_event(group_id, organizer_id, location, time):
+    event = Event.query.filter_by(id=event_id).first()
+    if event is None:
+        return None
+    new_event = event(
+        name=name,
+        organizer=organizer_id, #should is save id? or user itself?
+        location = location,
+        time = time
+    )
+    db.session.add(new_event)
+    db.session.commit()
+    return new_event.serialize()
 
 def delete_event(event_id):
+    event = Event.query.filter_by(id=event_id).first()
+    if event is None:
+        return None
+    db.session.delete(event)
+    db.session.commit()
+    return event.serialize()
 
 

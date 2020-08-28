@@ -29,7 +29,7 @@ class User(db.Model):
     pfp = db.Column(db.String, nullable=False) 
     groups = db.relationship('Group', secondary=association_table_usergrp, back_populates='members')#many to many with 'groups'
     events = db.relationship('Event', secondary=association_table_userevt, back_populates='members')#many to many with 'events'
-    messages = db.relationship('Message', cascade='delete') #relationship one (user) to many (dms)
+    # messages = db.relationship('Message', cascade='delete') #relationship one (user) to many (dms)
 
     def __init__(self, **kwargs):
         self.name = kwargs.get('name', '')
@@ -62,7 +62,7 @@ class Group(db.Model):
     organizer = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     members = ('User', secondary=association_table_usergrp, back_populates='groups')
     events = db.relationship('Event', cascade='delete')#one to many with 'events'
-    messages = db.relationship('Message', cascade='delete')#one to many with 'messages'
+    # messages = db.relationship('Message', cascade='delete')#one to many with 'messages'
     polls = db.relationship('Poll', cascade='delete')#one to  many with 'polls'
 
      def __init__(self, **kwargs):
@@ -80,7 +80,7 @@ class Group(db.Model):
             'organizer': [s.serialize_name() for s in self.user] ,
             'members':  [s.serialize_name() for s in self.members],
             'events': [s.serialize_name() for s in self.members] ,
-            'messages':  #messages thing
+            # 'messages':  #messages thing
             'polls': #polls thing
         }
 
@@ -110,34 +110,34 @@ class Activity(db.Model):
             
         }
 
-class Message(db.Model):
-    __tablename__='message'
-    id = db.Column(db.Integer, primary_key = True)
-    sender = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    content = db.Column (db.String, nullable = False)
-    timestamp = db.Column (db.String, nullable = False)
-    group = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) #many to one with group
+# class Message(db.Model):
+#     __tablename__='message'
+#     id = db.Column(db.Integer, primary_key = True)
+#     sender = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+#     content = db.Column (db.String, nullable = False)
+#     timestamp = db.Column (db.String, nullable = False)
+#     group = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) #many to one with group
 
-    def __init__(self, **kwargs):
-        self.sender = kwargs.get('sender', '')
-        self.content = kwargs.get('content', '')
-        self.timestamp = ctime()
-        self.channel = kwargs.get('channel', '')
+#     def __init__(self, **kwargs):
+#         self.sender = kwargs.get('sender', '')
+#         self.content = kwargs.get('content', '')
+#         self.timestamp = ctime()
+#         self.channel = kwargs.get('channel', '')
 
-    def serialize(self):
-        sender = User.query.filter_by(id=self.sender).first()
-        if sender is None:
-            return None
-        group = Group.query.filter_by(id=self.group).first()
-        if group is None:
-            return None
-        return{
-            'id':self.id,
-            'sender':sender.serialize_name(), 
-            'content':self.content,
-            'timestamp':self.timestamp,
-            'group':group.serialize_name() 
-        }
+#     def serialize(self):
+#         sender = User.query.filter_by(id=self.sender).first()
+#         if sender is None:
+#             return None
+#         group = Group.query.filter_by(id=self.group).first()
+#         if group is None:
+#             return None
+#         return{
+#             'id':self.id,
+#             'sender':sender.serialize_name(), 
+#             'content':self.content,
+#             'timestamp':self.timestamp,
+#             'group':group.serialize_name() 
+#         }
 
 class Poll(db.Model):
     __tablename__='poll'
@@ -179,7 +179,7 @@ class Event(db.Model):
     members = ('User', secondary=association_table_userevt, back_populates='events')
     
     def __init__(self, **kwargs):
-        self.active = kwargs.get('active','')
+        self.active = True
         self.organizer = kwargs.get('organizer','')
         self.name = kwargs.get('name','')
         self.location = kwargs.get('location,','')
