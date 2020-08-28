@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X3n-Tc-BuN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="mM3-Fy-39H">
+            <objects>
+                <viewController id="X3n-Tc-BuN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Psp-Rd-z4F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="zfB-se-l3T">
+                                <rect key="frame" x="144" y="234" width="126" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="Cn9-ew-Eom"/>
+                                    <constraint firstAttribute="height" constant="138" id="lPu-FN-6PT"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="df4-Ut-zQO">
+                                <rect key="frame" x="82" y="371" width="250" height="108"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="wud-hd-zRj">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="108"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4O-Pl-eFI">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="04k-gt-C5u"/>
+                                                    <constraint firstAttribute="height" constant="36" id="GoJ-nL-sFF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbJ-Ye-LJX">
+                                                <rect key="frame" x="0.0" y="72" width="250" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhC-31-TGI">
+                                <rect key="frame" x="153.5" y="567" width="107" height="30"/>
+                                <color key="backgroundColor" red="0.71764705882352942" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Rpd-Xr-jog"/>
+                                    <constraint firstAttribute="width" constant="107" id="eCU-I7-WBW"/>
+                                </constraints>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="df4-Ut-zQO" firstAttribute="centerX" secondItem="Psp-Rd-z4F" secondAttribute="centerX" id="9Tq-s9-HDD"/>
+                            <constraint firstItem="xhC-31-TGI" firstAttribute="centerX" secondItem="Psp-Rd-z4F" secondAttribute="centerX" id="D47-yg-DAX"/>
+                            <constraint firstItem="xhC-31-TGI" firstAttribute="top" secondItem="df4-Ut-zQO" secondAttribute="bottom" constant="60" id="RZ7-DB-Aem"/>
+                            <constraint firstItem="zfB-se-l3T" firstAttribute="top" secondItem="pNz-rE-91m" secondAttribute="top" constant="190" id="fyL-Jx-3uC"/>
+                            <constraint firstItem="zfB-se-l3T" firstAttribute="centerX" secondItem="Psp-Rd-z4F" secondAttribute="centerX" id="uNb-25-Tbn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pNz-rE-91m"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFV-0P-r8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4.3478260869565224" y="17.410714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="106.5" height="116.5"/>
+    </resources>
+</document>
