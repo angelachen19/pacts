@@ -1,0 +1,6 @@
+framework module Pods_Pacts {
+  umbrella header "Pods-Pacts-umbrella.h"
+
+  export *
+  module * { export * }
+}
