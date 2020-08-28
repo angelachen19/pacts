@@ -108,11 +108,11 @@ def delete_group(group_id):
     db.session.commit()
     return group.serialize()
 
-def get_messages_in_group(group_id):
-    group = group.query.filter_by(id=channel_id).first()
-    if group is None:
-        return None
-    return []########todo
+# def get_messages_in_group(group_id):
+#     group = group.query.filter_by(id=channel_id).first()
+#     if group is None:
+#         return None
+#     return []########todo
 
 
 
@@ -177,15 +177,15 @@ def delete_activity():
 
 ######################################################################################################
 #Poll
-def get_all_polls():
+# def get_all_polls():
 
-def get_poll_by_id(poll_id)
+# def get_poll_by_id(poll_id)
 
-def get_poll_in_group(group_id):
+# def get_poll_in_group(group_id):
 
-def create_poll(group_id):
+# def create_poll(group_id):
 
-def change_poll_status(poll_id):
+# def change_poll_status(poll_id):
 
 ######################################################################################################
 #Event

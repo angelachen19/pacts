@@ -62,7 +62,7 @@ class Group(db.Model):
     organizer = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     members = ('User', secondary=association_table_usergrp, back_populates='groups')
     events = db.relationship('Event', cascade='delete')#one to many with 'events'
-    messages = db.relationship('Message', cascade='delete')#one to many with 'messages'
+    # messages = db.relationship('Message', cascade='delete')#one to many with 'messages'
     polls = db.relationship('Poll', cascade='delete')#one to  many with 'polls'
 
      def __init__(self, **kwargs):
@@ -80,7 +80,7 @@ class Group(db.Model):
             'organizer': [s.serialize_name() for s in self.user] ,
             'members':  [s.serialize_name() for s in self.members],
             'events': [s.serialize_name() for s in self.members] ,
-            'messages':  #messages thing
+            # 'messages':  #messages thing
             'polls': #polls thing
         }
 
