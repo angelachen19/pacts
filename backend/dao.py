@@ -101,24 +101,53 @@ def update_group():
     return channel.serialize()
 
 def delete_group(group_id):
+    group = Group.query.filter_by(id=group_id).first()
+    if group is None:
+        return None
+    db.session.delete(groups)
+    db.session.commit()
+    return group.serialize()
 
 def get_messages_in_group(group_id):
     group = group.query.filter_by(id=channel_id).first()
     if group is None:
         return None
-    return 
+    return []########todo
 
 
 
 ######################################################################################################
 #Activity
 def get_all_activities():
+    return [w.serialize() for w in Activity.query.all()]
 
 def get_activity_by_id():
+    activity = Activity.query.filter_by(id=group_id).first()
+    if group is None:
+        return None
+    return group.serialize()
 
 def update_activity():
+    activity = Activity.query.filter_by(id=channel_id).first()
+    if activity is None:
+        return None
+    activity.name = body.get("name", activity.name)
+    activity.timeofday = body.get("timeofday", activity.timeofday)
+    activity.weather = body.get("weather", activity.weather)
+    activity.minnumppl = body.get("minnumppl", activity.minnumppl)
+    activity.maxnumppl = body.get("maxnumppl", activity.maxnumppl)
+    activity.location = body.get("location", activity.location)
+    activity.description = body.get("description", activity.descriiption)
+    db.session.commit()
+    return channel.serialize()
 
 def delete_activity():
+    activity = Activity.query.filter_by(id=activity_id).first()
+    if activity is None:
+        return None
+    db.session.delete(groups)
+    db.session.commit()
+    return group.serialize()
 
 ######################################################################################################
 #Message

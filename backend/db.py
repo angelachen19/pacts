@@ -43,7 +43,7 @@ class User(db.Model):
             'id':self.id,
             'name':self.name,
             'year':self.year,
-            'pfpf:self.pfp,
+            'pfp':self.pfp,
             'groups':[a.serialize_name() for a in self.groups],
             'events':[s.serialize() for s in self.events]
         }
@@ -58,7 +58,7 @@ class User(db.Model):
 class Group(db.Model):
     __tablename__='group'
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String, nullable = False) #name of group
+    name = db.Column(db.String, nullable = True) #name of group
     organizer = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     members = ('User', secondary=association_table_usergrp, back_populates='groups')
     events = db.relationship('Event', cascade='delete')#one to many with 'events'
@@ -68,10 +68,9 @@ class Group(db.Model):
      def __init__(self, **kwargs):
         self.name = kwargs.get('name', '')
 
-    def serialize_name(self):
+     def serialize_name(self):
         return{
-            'id':self.id
-            
+            'id':self.id,
         }
 
      def serialize(self):
@@ -137,7 +136,7 @@ class Message(db.Model):
             'sender':sender.serialize_name(), 
             'content':self.content,
             'timestamp':self.timestamp,
-            'group':group.serialize_name() s
+            'group':group.serialize_name() 
         }
 
 class Poll(db.Model):
