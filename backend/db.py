@@ -43,7 +43,7 @@ class User(db.Model):
             'id':self.id,
             'name':self.name,
             'year':self.year,
-            'pfp':self.pfp,
+            'pfpf:self.pfp,
             'groups':[a.serialize_name() for a in self.groups],
             'events':[s.serialize() for s in self.events]
         }
