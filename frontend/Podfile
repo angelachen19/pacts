@@ -10,5 +10,6 @@ target 'Pacts' do
 pod 'FSCalendar'
 pod 'Alamofire'
 pod 'SnapKit'
+pod 'CardParts'
 
 end
