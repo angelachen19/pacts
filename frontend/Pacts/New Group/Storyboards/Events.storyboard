@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c4q-Wj-0Bx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VDx-7q-ZTk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Events-->
+        <!--EventsViewController-->
         <scene sceneID="5xo-ga-ArJ">
             <objects>
-                <viewController id="c4q-Wj-0Bx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="events_vc" title="EventsViewController" id="c4q-Wj-0Bx" customClass="EventsViewController" customModule="Pacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mir-9n-FSn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,15 +44,93 @@
                                 <rect key="frame" x="347" y="69" width="27" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k80-F3-a7o">
+                                <rect key="frame" x="137" y="439.5" width="140" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="IJC-ud-Qhc"/>
+                                    <constraint firstAttribute="width" constant="140" id="Rgg-QG-fWU"/>
+                                </constraints>
+                                <state key="normal" title="Show All"/>
+                                <connections>
+                                    <segue destination="pVL-P9-28Z" kind="show" id="fMN-BY-BJ2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0db-5Q-7kq">
+                                <rect key="frame" x="148" y="723" width="157" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Suggested Activities">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="k80-F3-a7o" firstAttribute="centerX" secondItem="mir-9n-FSn" secondAttribute="centerX" id="CV1-n9-Bh0"/>
+                            <constraint firstItem="k80-F3-a7o" firstAttribute="centerY" secondItem="mir-9n-FSn" secondAttribute="centerY" id="ieg-hJ-U0b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="H24-ih-sd4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="Events" id="n2Y-RX-p67"/>
+                    <navigationItem key="navigationItem" id="AcL-89-dya">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Dli-uo-SuU"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btP-RA-6E8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1055.072463768116" y="-42.1875"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="tXG-lv-V1a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VDx-7q-ZTk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Events" image="Events" id="n2Y-RX-p67"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Ug6-wo-gvy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x4g-un-xSe">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="c4q-Wj-0Bx" kind="relationship" relationship="rootViewController" id="76P-VL-cYx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gsk-kZ-gzv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="144.92753623188406" y="-42.1875"/>
+        </scene>
+        <!--DetailedEventsViewController-->
+        <scene sceneID="yR8-DD-cmL">
+            <objects>
+                <viewController title="DetailedEventsViewController" id="pVL-P9-28Z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gO6-7A-NDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GM8-Ok-fvt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DKI-dA-Gcs">
+                        <barButtonItem key="backBarButtonItem" title="no" id="uKp-bp-5tc"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S30-Nd-aXl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1945" y="-42"/>
         </scene>
     </scenes>
     <resources>
