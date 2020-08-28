@@ -20,9 +20,14 @@ def success_response(data, code=200):
 
 def failure_response(message, code=404):
     return json.dumps({"success": False, "error": message}), code
-######################################################################################################    
+######################################################################################################
 
+@app.route('/users/', methods=['GET'])
+def get_all_users():
+    return success_response(dao.get_all_users())
 
+@app.route('/users/<int:user_id>/', methods=['GET'])
+def
 
 
 
