@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Events View Controller-->
+        <!--EventsViewController-->
         <scene sceneID="5xo-ga-ArJ">
             <objects>
-                <viewController storyboardIdentifier="events_vc" id="c4q-Wj-0Bx" customClass="EventsViewController" customModule="Pacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="events_vc" title="EventsViewController" id="c4q-Wj-0Bx" customClass="EventsViewController" customModule="Pacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mir-9n-FSn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,6 +55,19 @@
                                     <segue destination="pVL-P9-28Z" kind="show" id="fMN-BY-BJ2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0db-5Q-7kq">
+                                <rect key="frame" x="148" y="723" width="157" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Suggested Activities">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -101,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="144.92753623188406" y="-42.1875"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailedEventsViewController-->
         <scene sceneID="yR8-DD-cmL">
             <objects>
-                <viewController id="pVL-P9-28Z" sceneMemberID="viewController">
+                <viewController title="DetailedEventsViewController" id="pVL-P9-28Z" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gO6-7A-NDQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
