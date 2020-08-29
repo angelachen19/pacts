@@ -209,7 +209,7 @@ def create_event(group_id):
     event = dao.create_event(
         name=body.get('name'),
         group=group_id,
-        organizer=body.get('organizer_id'),
+        organizer=body.get('organizer_id'), #organizer is a user
         location=body.get('location'),
         time=body.get('time')
     )

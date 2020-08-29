@@ -185,16 +185,68 @@ def delete_activity(activity_id):
 
 
 ######################################################################################################
-#Poll
-# def get_all_polls():
+#Poll 1
+def get_all_poll1s():
+    return [p.serialize() for p in Poll1.query.all()]
 
-# def get_poll_by_id(poll_id)
+def get_poll1_by_id(poll1_id):
+    poll1 = Poll1.query.filter_by(id=poll1_id).first()
+    if poll1 is None:
+        return None
+    return poll1.serialize()
 
-# def get_poll_in_group(group_id):
+def get_poll1s_in_group(group_id):
+    group = Group.query.filter_by(id=group_id).first()
+    if group is None:
+        return None
+    return [p.serialize() for p in group.poll1s]
 
-# def create_poll(group_id):
+def create_poll1(group_id, eventday):
+        group = Group.query.filter_by(id=group_id).first()
+        if group is None:
+            return None
+        new_poll1 = poll1(
+            active=True,
+            eventday=eventday,
+            group=group_id,
+            choice1=json.dumps(["Virtual", "Outdoors", "School Event", "Dining"]),
+            choice2=json.dumps(["Morning", "Afternoon", "Evening"]),
+        )
+        db.session.add(new_poll1)
+        db.session.commit()
+        return new_poll1.serialize()
 
-# def change_poll_status(poll_id):
+def create_poll2(group_id, poll1_id, eventtime):
+        group = Group.query.filter_by(id=group_id).first()
+        poll1 = Poll1.query.filter_by(id=poll1_id).first()
+        if group is None:
+            return None
+        if poll1 is None:
+            return None
+        new_poll2 = poll2(
+            active=True,
+            poll1=poll1_id,
+            eventtime=eventtime,
+            group=group_id,
+            choices=json.dumps([
+            "Hiking with Touchdown",
+            "Apple Picking",
+            "Paddling at Cayuga Lake",
+            "Picnic on the Slope",
+            "Visit the Sagan Planet Walk"]), #given more time, we would actually suggest events based on polls
+        )
+        db.session.add(new_poll2)
+        db.session.commit()
+        return new_poll2.serialize()
+
+def update_poll1(poll1_id, body):
+    poll1 = Poll1.query.filter_by(id=poll1_id).first()
+    if poll1 is None:
+        return None
+    poll1.answer1 = body.get("name", activity.name
+    db.session.commit()
+    return activity.serialize()
+
 
 ######################################################################################################
 #Event
@@ -208,14 +260,14 @@ def get_event_by_id(event_id):
     return event.serialize()
 
 def get_events_in_group(group_id):
-    group = Event.query.filter_by(id=group_id).first()
+    group = Group.query.filter_by(id=group_id).first()
     if group is None:
         return None
     return [m.serialize() for m in group.events]
 
 def create_event(group_id, organizer_id, location, time):
-    event = Event.query.filter_by(id=event_id).first()
-    if event is None:
+    group = Group.query.filter_by(id=group_id).first()
+    if group is None:
         return None
     new_event = event(
         name=name,
