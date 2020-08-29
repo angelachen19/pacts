@@ -10,5 +10,7 @@ target 'Pacts' do
 pod 'FSCalendar'
 pod 'Alamofire'
 pod 'SnapKit'
+pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 
 end
