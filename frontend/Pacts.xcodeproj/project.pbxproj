@@ -14,6 +14,8 @@
 		16A669E424F9B23300BC3232 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A669E324F9B23300BC3232 /* EventsViewController.swift */; };
 		16A669E624F9B6EB00BC3232 /* DetailedEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A669E524F9B6EB00BC3232 /* DetailedEventsViewController.swift */; };
 		16A669E824FA003100BC3232 /* EventsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A669E724FA003100BC3232 /* EventsTableTableViewController.swift */; };
+		16A669EA24FA1F2A00BC3232 /* CS2110.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A669E924FA1F2A00BC3232 /* CS2110.storyboard */; };
+		16A669EC24FA1FF700BC3232 /* OkiesStirFry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A669EB24FA1FF700BC3232 /* OkiesStirFry.storyboard */; };
 		16A9020424F8B6BA0014D6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A9020324F8B6BA0014D6D8 /* AppDelegate.swift */; };
 		16A9020624F8B6BA0014D6D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A9020524F8B6BA0014D6D8 /* SceneDelegate.swift */; };
 		16A9020A24F8B6BC0014D6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A9020924F8B6BC0014D6D8 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		16A669E324F9B23300BC3232 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = Pacts/EventsViewController.swift; sourceTree = SOURCE_ROOT; };
 		16A669E524F9B6EB00BC3232 /* DetailedEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedEventsViewController.swift; sourceTree = "<group>"; };
 		16A669E724FA003100BC3232 /* EventsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableTableViewController.swift; sourceTree = "<group>"; };
+		16A669E924FA1F2A00BC3232 /* CS2110.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CS2110.storyboard; sourceTree = "<group>"; };
+		16A669EB24FA1FF700BC3232 /* OkiesStirFry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OkiesStirFry.storyboard; sourceTree = "<group>"; };
 		16A9020024F8B6BA0014D6D8 /* Pacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A9020324F8B6BA0014D6D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16A9020524F8B6BA0014D6D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 			children = (
 				1695B43D24F9894F00D3D693 /* Main.storyboard */,
 				16A669E124F9B0F800BC3232 /* Pacts.storyboard */,
+				16A669EB24FA1FF700BC3232 /* OkiesStirFry.storyboard */,
+				16A669E924FA1F2A00BC3232 /* CS2110.storyboard */,
 				16A669DF24F9B08C00BC3232 /* Events.storyboard */,
 			);
 			path = Storyboards;
@@ -192,7 +198,9 @@
 			files = (
 				16A669E224F9B0F800BC3232 /* Pacts.storyboard in Resources */,
 				16A669E024F9B08C00BC3232 /* Events.storyboard in Resources */,
+				16A669EA24FA1F2A00BC3232 /* CS2110.storyboard in Resources */,
 				16A9021024F8B6BC0014D6D8 /* LaunchScreen.storyboard in Resources */,
+				16A669EC24FA1FF700BC3232 /* OkiesStirFry.storyboard in Resources */,
 				16A9020D24F8B6BC0014D6D8 /* Preview Assets.xcassets in Resources */,
 				16A9020A24F8B6BC0014D6D8 /* Assets.xcassets in Resources */,
 				1695B43E24F9894F00D3D693 /* Main.storyboard in Resources */,
