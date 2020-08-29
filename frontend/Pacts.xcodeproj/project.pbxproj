@@ -16,6 +16,7 @@
 		16A669E824FA003100BC3232 /* EventsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A669E724FA003100BC3232 /* EventsTableTableViewController.swift */; };
 		16A669EA24FA1F2A00BC3232 /* CS2110.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A669E924FA1F2A00BC3232 /* CS2110.storyboard */; };
 		16A669EC24FA1FF700BC3232 /* OkiesStirFry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A669EB24FA1FF700BC3232 /* OkiesStirFry.storyboard */; };
+		16A669F024FA359200BC3232 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16A669EF24FA359200BC3232 /* GoogleService-Info.plist */; };
 		16A9020424F8B6BA0014D6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A9020324F8B6BA0014D6D8 /* AppDelegate.swift */; };
 		16A9020624F8B6BA0014D6D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A9020524F8B6BA0014D6D8 /* SceneDelegate.swift */; };
 		16A9020A24F8B6BC0014D6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A9020924F8B6BC0014D6D8 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		16A669E724FA003100BC3232 /* EventsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableTableViewController.swift; sourceTree = "<group>"; };
 		16A669E924FA1F2A00BC3232 /* CS2110.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CS2110.storyboard; sourceTree = "<group>"; };
 		16A669EB24FA1FF700BC3232 /* OkiesStirFry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OkiesStirFry.storyboard; sourceTree = "<group>"; };
+		16A669EF24FA359200BC3232 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16A9020024F8B6BA0014D6D8 /* Pacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A9020324F8B6BA0014D6D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16A9020524F8B6BA0014D6D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				16A669E724FA003100BC3232 /* EventsTableTableViewController.swift */,
 				16A9020924F8B6BC0014D6D8 /* Assets.xcassets */,
 				16A9020E24F8B6BC0014D6D8 /* LaunchScreen.storyboard */,
+				16A669EF24FA359200BC3232 /* GoogleService-Info.plist */,
 				16A9021124F8B6BC0014D6D8 /* Info.plist */,
 				16A9020B24F8B6BC0014D6D8 /* Preview Content */,
 			);
@@ -148,6 +151,7 @@
 				16A901FD24F8B6BA0014D6D8 /* Frameworks */,
 				16A901FE24F8B6BA0014D6D8 /* Resources */,
 				7F214A5E73B9519F53812FFE /* [CP] Embed Pods Frameworks */,
+				F6B6CBC41F3F7DE81BBE197C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,6 +202,7 @@
 			files = (
 				16A669E224F9B0F800BC3232 /* Pacts.storyboard in Resources */,
 				16A669E024F9B08C00BC3232 /* Events.storyboard in Resources */,
+				16A669F024FA359200BC3232 /* GoogleService-Info.plist in Resources */,
 				16A669EA24FA1F2A00BC3232 /* CS2110.storyboard in Resources */,
 				16A9021024F8B6BC0014D6D8 /* LaunchScreen.storyboard in Resources */,
 				16A669EC24FA1FF700BC3232 /* OkiesStirFry.storyboard in Resources */,
@@ -247,6 +252,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6B6CBC41F3F7DE81BBE197C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pacts/Pods-Pacts-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pacts/Pods-Pacts-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pacts/Pods-Pacts-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
