@@ -2,7 +2,7 @@ import json
 from flask import Flask, request
 import dao
 import os
-from db import db, User, Group, Activiity, Message, Poll, Event
+from db import db, User, Group, Activiity, Poll, Event
 
 app = Flask(__name__)
 db_filename = "slack.db"
@@ -83,7 +83,7 @@ def create_group():
     body = json.loads(request.data)
     group = dao.create_group(
         name=body.get('name'),
-        organizer_id=body.get('organizer_id')
+        organizer=body.get('organizer_id')
     )
     return success_response(group)
 
@@ -157,22 +157,71 @@ def create_activity():
         location=body.get('location'),
         description=body.get('description')
     )
+    return success_response(activity)
 
 #update activity
+@app.route('/activities/<int:activity_id>/', methods=['POST'])
+def update_activity_by_id(activity_id):
+    body = json.loads(request.data)
+    activity = dao.update_activity(activity_id, body)
+    if activity is None:
+        return failure_response('Activity not found!')
+    return success_response(activity)
+
 #delete activity
+@app.route('/activities/<int:activity_id>/', methods=['DELETE'])
+def delete_activity_by_id(activity_id):
+    activity = dao.delete_activity(activity_id)
+    if activity is None:
+        return failure_response('Activity not found!')
+    return success_response(activity)
 
 ######################################################################################################
 #Poll
 
 ######################################################################################################
 #Event
-
 #get all events
-#get event by id
-#get events in group
-#create event
-#delete event
+@app.route('/events/', methods=['GET'])
+def get_all_events():
+    return success_response(dao.get_all_events())
 
+#get event by id
+@app.route('/events/<int:event_id>/', methods=['GET'])
+def get_event_by_id(event_id):
+    event = dao.get_event_by_id(event_id)
+    if event is None:
+        return failure_response('Event not found!')
+    return success_response(event)
+
+#get events in group
+@app.route('/group/<int:group_id>/events/', methods=['GET'])
+def get_events_in_group(group_id):
+    events = dao.get_events_in_group(group_id)
+    if group is None:
+        return failure_response('Group not found!')
+    return success_response(events)
+
+#create event
+@app.route('/group/<int:group_id>/events/', methods=['POST'])
+def create_event(group_id):
+    event = json.loads(request.data)
+    event = dao.create_event(
+        name=body.get('name'),
+        group=group_id,
+        organizer=body.get('organizer_id'),
+        location=body.get('location'),
+        time=body.get('time')
+    )
+    return success_response(event)
+
+#delete event
+@app.route('/events/<int:event_id>/', methods=['DELETE'])
+def delete_event_by_id(event_id):
+    event = dao.delete_event(event_id)
+    if event is None:
+        return failure_response('Event not found!')
+    return success_response(event)
 
 
 

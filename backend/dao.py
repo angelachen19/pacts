@@ -202,7 +202,7 @@ def get_all_events():
     return [w.serialize() for w in Event.query.all()]
 
 def get_event_by_id(event_id):
-    event = Event.query.filter_by(id=Event_id).first()
+    event = Event.query.filter_by(id=event_id).first()
     if event is None:
         return None
     return event.serialize()
@@ -219,9 +219,10 @@ def create_event(group_id, organizer_id, location, time):
         return None
     new_event = event(
         name=name,
+        group=group_id,
         organizer=organizer_id, #should is save id? or user itself?
-        location = location,
-        time = time
+        location=location,
+        time=time
     )
     db.session.add(new_event)
     db.session.commit()
