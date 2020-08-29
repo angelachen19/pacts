@@ -86,7 +86,7 @@
         <scene sceneID="XzY-67-LOP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6TV-JQ-bfQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pacts" selectedImage="Pacts" id="1Vm-I1-DW8"/>
+                    <tabBarItem key="tabBarItem" title="Pacts" image="Pacts" selectedImage="Pacts" id="1Vm-I1-DW8"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JaB-da-dBV">
