@@ -398,10 +398,13 @@
                                     <rect key="frame" x="30" y="301" width="354" height="240"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Picnic" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-XL-6eb">
-                                            <rect key="frame" x="20" y="0.0" width="314" height="63"/>
+                                            <rect key="frame" x="20" y="0.0" width="314" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="ZjX-0Q-men"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBU-Vm-nzk">
-                                            <rect key="frame" x="20" y="83" width="200" height="30"/>
+                                            <rect key="frame" x="77" y="120" width="200" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="Ksi-mk-0Sg"/>
                                                 <constraint firstAttribute="width" constant="200" id="vaX-JX-tIj"/>
@@ -410,7 +413,7 @@
                                                 <fragment content="Picnic with Gries">
                                                     <attributes>
                                                         <font key="NSFont" size="17" name="Helvetica-Bold"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -422,9 +425,9 @@
                                         <constraint firstItem="BBU-Vm-nzk" firstAttribute="top" secondItem="uAd-XL-6eb" secondAttribute="bottom" constant="20" id="EzA-Po-gm8"/>
                                         <constraint firstItem="uAd-XL-6eb" firstAttribute="centerX" secondItem="M5q-zs-s7T" secondAttribute="centerX" id="TZS-Ue-dJ2"/>
                                         <constraint firstItem="uAd-XL-6eb" firstAttribute="top" secondItem="M5q-zs-s7T" secondAttribute="top" id="U2C-Rl-H8a"/>
-                                        <constraint firstItem="BBU-Vm-nzk" firstAttribute="leading" secondItem="M5q-zs-s7T" secondAttribute="leading" constant="20" id="UCB-73-Psx"/>
                                         <constraint firstAttribute="height" constant="240" id="VAk-kE-Pm6"/>
                                         <constraint firstAttribute="trailing" secondItem="uAd-XL-6eb" secondAttribute="trailing" constant="20" id="fwL-d0-pDr"/>
+                                        <constraint firstItem="BBU-Vm-nzk" firstAttribute="centerX" secondItem="M5q-zs-s7T" secondAttribute="centerX" id="jtY-mN-SB2"/>
                                         <constraint firstItem="BBU-Vm-nzk" firstAttribute="top" secondItem="uAd-XL-6eb" secondAttribute="bottom" constant="20" id="x9Q-0K-1lF"/>
                                         <constraint firstItem="uAd-XL-6eb" firstAttribute="leading" secondItem="M5q-zs-s7T" secondAttribute="leading" constant="20" id="xpc-43-6iK"/>
                                     </constraints>
