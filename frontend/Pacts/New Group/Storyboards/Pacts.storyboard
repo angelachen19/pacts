@@ -44,6 +44,9 @@
                                 <state key="normal" title="Navigate to next">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="33Q-Fh-uK0" kind="show" id="Z5N-PC-VU6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="1886" y="874"/>
         </scene>
-        <!--Single Pact View Controller-->
+        <!--View Controller-->
         <scene sceneID="aoD-OF-5MH">
             <objects>
-                <viewController storyboardIdentifier="pactChat_vc" id="33Q-Fh-uK0" customClass="SinglePactViewController" customModule="Pacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pactChat_vc" id="33Q-Fh-uK0" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P34-EH-2Sm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
