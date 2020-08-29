@@ -24,6 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+<<<<<<< HEAD
 ## AppAuth
 
 
@@ -230,6 +231,8 @@ THE SOFTWARE.
    limitations under the License.
 
 
+=======
+>>>>>>> 6071d051598278af67326fceae94b0147b150b0d
 ## FSCalendar
 
 Copyright (c) 2013-2016 FSCalendar (https://github.com/WenchaoD/FSCalendar)
@@ -253,6 +256,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+<<<<<<< HEAD
 ## Firebase
 
 
@@ -2156,6 +2160,8 @@ Fuller's blog</a>
    limitations under the License.
 
 
+=======
+>>>>>>> 6071d051598278af67326fceae94b0147b150b0d
 ## SnapKit
 
 Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit

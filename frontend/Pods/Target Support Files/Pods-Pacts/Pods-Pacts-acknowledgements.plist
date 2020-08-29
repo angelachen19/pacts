@@ -43,6 +43,7 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+<<<<<<< HEAD
 			<string>
                                  Apache License
                            Version 2.0, January 2004
@@ -288,6 +289,9 @@ THE SOFTWARE.
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
+=======
+			<string>Copyright (c) 2013-2016 FSCalendar (https://github.com/WenchaoD/FSCalendar)
+>>>>>>> 6071d051598278af67326fceae94b0147b150b0d
 
    TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
@@ -496,6 +500,7 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+<<<<<<< HEAD
 			<string>
                                  Apache License
                            Version 2.0, January 2004
@@ -2247,6 +2252,8 @@ Fuller's blog&lt;/a&gt;
 		</dict>
 		<dict>
 			<key>FooterText</key>
+=======
+>>>>>>> 6071d051598278af67326fceae94b0147b150b0d
 			<string>Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
