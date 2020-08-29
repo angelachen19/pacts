@@ -53,37 +53,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="8yt-1k-cfZ">
-                                <rect key="frame" x="347" y="69" width="27" height="28"/>
+                                <rect key="frame" x="310" y="69" width="27" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SMj-8w-34s">
-                                <rect key="frame" x="87" y="268" width="240" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0db-5Q-7kq">
-                                <rect key="frame" x="62" y="624" width="157" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Suggested Activities">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedEvents" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="747-IX-U1d">
-                                <rect key="frame" x="23" y="140" width="321" height="230.5"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yellow Events" translatesAutoresizingMaskIntoConstraints="NO" id="2GE-A5-fIf">
-                                <rect key="frame" x="23" y="404" width="321" height="143"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k80-F3-a7o">
-                                <rect key="frame" x="254" y="547" width="140" height="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k80-F3-a7o">
+                                <rect key="frame" x="224" y="540.5" width="140" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="IJC-ud-Qhc"/>
                                     <constraint firstAttribute="width" constant="140" id="Rgg-QG-fWU"/>
@@ -95,14 +69,31 @@
                                     <segue destination="pVL-P9-28Z" kind="show" id="fMN-BY-BJ2"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedEvents" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="747-IX-U1d">
+                                <rect key="frame" x="23" y="140" width="321" height="230.5"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yellow Events" translatesAutoresizingMaskIntoConstraints="NO" id="2GE-A5-fIf">
+                                <rect key="frame" x="23" y="404" width="321" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0db-5Q-7kq">
+                                <rect key="frame" x="20" y="577.5" width="294" height="35"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="k80-F3-a7o" firstAttribute="top" secondItem="747-IX-U1d" secondAttribute="bottom" constant="170" id="DC0-4B-7sw"/>
                             <constraint firstItem="KSI-Qz-SEb" firstAttribute="top" secondItem="747-IX-U1d" secondAttribute="bottom" constant="10" id="FlY-73-9M1"/>
                             <constraint firstItem="747-IX-U1d" firstAttribute="top" secondItem="H24-ih-sd4" secondAttribute="top" id="Gbe-jh-tiL"/>
-                            <constraint firstItem="k80-F3-a7o" firstAttribute="top" secondItem="SMj-8w-34s" secondAttribute="bottom" constant="535" id="Oys-1b-Ilm"/>
                             <constraint firstItem="747-IX-U1d" firstAttribute="leading" secondItem="H24-ih-sd4" secondAttribute="leading" constant="23" id="Twn-6n-5dV"/>
+                            <constraint firstItem="0db-5Q-7kq" firstAttribute="top" secondItem="k80-F3-a7o" secondAttribute="bottom" constant="20" id="m1L-3n-wYD"/>
                             <constraint firstItem="KSI-Qz-SEb" firstAttribute="leading" secondItem="H24-ih-sd4" secondAttribute="leading" constant="23" id="s4b-7z-Wxg"/>
+                            <constraint firstItem="0db-5Q-7kq" firstAttribute="leading" secondItem="H24-ih-sd4" secondAttribute="leading" constant="20" id="w8h-V7-4HG"/>
                             <constraint firstItem="H24-ih-sd4" firstAttribute="trailing" secondItem="k80-F3-a7o" secondAttribute="trailing" constant="50" id="zJ4-i9-j2W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H24-ih-sd4"/>
@@ -203,8 +194,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Hiking" translatesAutoresizingMaskIntoConstraints="NO" id="0Pk-q4-0zQ">
-                                <rect key="frame" x="10" y="478" width="394" height="163"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RedEvents" translatesAutoresizingMaskIntoConstraints="NO" id="0Pk-q4-0zQ">
+                                <rect key="frame" x="10" y="478" width="394" height="270"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISq-H5-i9F">
                                 <rect key="frame" x="10" y="450" width="53" height="24"/>
@@ -220,7 +211,7 @@
                             <constraint firstItem="ISq-H5-i9F" firstAttribute="leading" secondItem="GM8-Ok-fvt" secondAttribute="leading" constant="10" id="JGa-vx-Wbh"/>
                             <constraint firstItem="GM8-Ok-fvt" firstAttribute="trailing" secondItem="0Pk-q4-0zQ" secondAttribute="trailing" constant="10" id="ROo-yE-Nep"/>
                             <constraint firstItem="9xx-qb-erc" firstAttribute="leading" secondItem="GM8-Ok-fvt" secondAttribute="leading" constant="10" id="RPa-n0-uQo"/>
-                            <constraint firstItem="0Pk-q4-0zQ" firstAttribute="top" secondItem="9xx-qb-erc" secondAttribute="bottom" id="Szm-X0-40J"/>
+                            <constraint firstItem="0Pk-q4-0zQ" firstAttribute="top" secondItem="9xx-qb-erc" secondAttribute="bottom" constant="50" id="Szm-X0-40J"/>
                             <constraint firstItem="ISq-H5-i9F" firstAttribute="top" secondItem="9xx-qb-erc" secondAttribute="bottom" constant="10" id="ULw-c1-gfv"/>
                             <constraint firstItem="9xx-qb-erc" firstAttribute="top" secondItem="GM8-Ok-fvt" secondAttribute="top" id="p8S-tX-IkY"/>
                         </constraints>
@@ -240,7 +231,6 @@
     </scenes>
     <resources>
         <image name="Events" width="31" height="31"/>
-        <image name="Hiking" width="455.5" height="163"/>
         <image name="Profile" width="50" height="50"/>
         <image name="RedEvents" width="321" height="230.5"/>
         <image name="Yellow Events" width="324" height="119"/>
