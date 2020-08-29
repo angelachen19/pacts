@@ -2,7 +2,7 @@ from time import time, ctime
 from db import db, User, Group, Activiity, Message, Poll, Event
 
 #learn oauth?
-#todo: 
+#todo:
 
 
 ######################################################################################################
@@ -48,6 +48,11 @@ def delete_user(user_id):
     return user.serialize()
 
 def log_in(user_email, user_password):
+    user = User.query.filter_by(email=user_email).first()
+    if (user.password != user_password):
+        return None
+    return user.serialize()
+
 
 ######################################################################################################
 #Group
@@ -73,13 +78,13 @@ def create_group(name=None, organizer_id):
     return new_group.serialize()
 
 def add_user_to_group(user_id, group_id):
-     group = Group.query.filter_by(id=group_id).first()
+    group = Group.query.filter_by(id=group_id).first()
     if group is None:
         return None
     user = User.query.filter_by(id=user_id).first()
     group.users.append(user)
     db.session.commit()
-    return channel.serialize()
+    return group.serialize()
 
 
 def remove_user_from_group(user_id, group_id):
@@ -89,16 +94,16 @@ def remove_user_from_group(user_id, group_id):
     user = User.query.filter_by(id=user_id).first()
     group.users.remove(user)
     db.session.commit()
-    return channel.serialize()
+    return group.serialize()
 
 def update_group():
-    channel = Channel.query.filter_by(id=channel_id).first()
-    if channel is None:
+    group = Group.query.filter_by(id=group_id).first()
+    if group is None:
         return None
-    channel.name = body.get("name", channel.name)
-    channel.description = body.get("description", channel.description)
+    group.name = body.get("name", group.name)
+    group.description = body.get("description", group.description)
     db.session.commit()
-    return channel.serialize()
+    return group.serialize()
 
 def delete_group(group_id):
     group = Group.query.filter_by(id=group_id).first()
@@ -109,7 +114,7 @@ def delete_group(group_id):
     return group.serialize()
 
 # def get_messages_in_group(group_id):
-#     group = group.query.filter_by(id=channel_id).first()
+#     group = group.query.filter_by(id=group_id).first()
 #     if group is None:
 #         return None
 #     return []########todo
@@ -117,7 +122,7 @@ def delete_group(group_id):
 
 
 ######################################################################################################
-#Activity 
+#Activity
 #This stuff is all on the dev side
 def get_all_activities():
     return [w.serialize() for w in Activity.query.all()]
@@ -128,7 +133,7 @@ def get_activity_by_id():
         return None
     return group.serialize()
 
-def create_activity(): 
+def create_activity():
     activity = Activity.query.filter_by(id=user_id).first()
     if user is None:
         return None
@@ -141,7 +146,7 @@ def create_activity():
     return new_group.serialize()
 
 def update_activity():
-    activity = Activity.query.filter_by(id=channel_id).first()
+    activity = Activity.query.filter_by(id=group_id).first()
     if activity is None:
         return None
     activity.name = body.get("name", activity.name)
@@ -152,7 +157,7 @@ def update_activity():
     activity.location = body.get("location", activity.location)
     activity.description = body.get("description", activity.descriiption)
     db.session.commit()
-    return channel.serialize()
+    return group.serialize()
 
 def delete_activity():
     activity = Activity.query.filter_by(id=activity_id).first()
@@ -202,7 +207,7 @@ def get_events_in_group(group_id):
     event = Event.query.filter_by(id=event_id).first()
     if event is None:
         return None
-    return [m.serialize() for m in channel.messages]
+    return [m.serialize() for m in group.messages]
 
 def create_event(group_id, organizer_id, location, time):
     event = Event.query.filter_by(id=event_id).first()
@@ -225,5 +230,3 @@ def delete_event(event_id):
     db.session.delete(event)
     db.session.commit()
     return event.serialize()
-
-

@@ -46,7 +46,7 @@ def create_user():
     )
     return success_response(user)
 #update user by id
-@app.route('/users/', methods=['POST'])
+@app.route('/users/<int:user_id>/', methods=['POST'])
 def update_user_by_id(user_id):
     body = json.loads(request.data)
     user = dao.update_user_by_id(user_id, body)
@@ -68,30 +68,47 @@ def update_user_by_id(user_id):
 
 #get all groups
 @app.route('/groups/', methods=['GET'])
-def get_all_users():
-    return success_response(dao.get_all_users())
+def get_all_groups():
+    return success_response(dao.get_all_groups())
 #get group by id
 @app.route('/groups/<int:group_id>/', methods=['GET'])
-def get_user_by_id(user_id):
-    user = dao.get_user_by_id(user_id)
-    if user is None:
-        return failure_response("User not found!")
-    return success_response(user)
+def get_group_by_id(group_id):
+    group = dao.get_group_by_id(group_id)
+    if group is None:
+        return failure_response('Group not found!')
+    return success_response(group)
 #create group
 @app.route('/groups/', methods=['POST'])
+def create_group():
+    body = json.loads(request.data)
+    group = dao.create_group(
+        name=body.get('name'),
+        organizer_id=body.get('organizer_id')
+    )
+    return success_response(group)
 
 #add user to group
 @app.route('/groups/<int:group_id>/add/', methods=['POST'])
 def add_user_to_group(user_id, group_id):
     group = Group.query.filter_by(id=group_id).first()
     if group is None:
-        return None
+        return failure_response('Group not found!')
+    if user is None:
+        return failure_response('User not found!')
     user = User.query.filter_by(id=user_id).first()
     group.users.append(user)
     db.session.commit()
     return channel.serialize()
-    
+
 #remove user from groups
+@app.route('/groups/<int:group_id>/user/<int:user_id>/', methods=['DELETE'])
+def remove_user_from_group(user_id, group_id):
+    group = dao.remove_user_from_group(user_id, group_id)
+    if group is None:
+        return failure_response('Group not found!')
+    if user is None:
+        return failure_response('User not found!')
+    return success_response(group)
 
 #update group
 
@@ -125,4 +142,3 @@ def add_user_to_group(user_id, group_id):
 ######################################################################################################
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
-
