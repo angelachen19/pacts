@@ -180,6 +180,7 @@ class Event(db.Model):
     __tablename__='event'
     id = db.Column(db.Integer, primary_key = True)
     active = db.Column(db.Boolean, nullable=False)
+    group = db.Column(db.Integer, db.ForeignKey('group.id'), nullable=False)
     organizer = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     name = db.Column(db.String, nullable=False)
     location =  db.Column(db.String, nullable=False) #address, or modality
@@ -189,16 +190,22 @@ class Event(db.Model):
 
     def __init__(self, **kwargs):
         self.active = True
+        self.group = kwargs.get('group', '')
         self.organizer = kwargs.get('organizer','')
         self.name = kwargs.get('name','')
         self.location = kwargs.get('location,','')
         self.time =  kwargs.get('time', '')
     
     def serialize(self):
+        organizer = User.query.filter_by(id=self.organizer).first()
+        group = User.query.filter_by(id=self.group).first()
+        if organizer is None or group is None:
+            return None
         return{ 
             'id':self.id,
             'active':self.active,
-            'organizer':self.organizer,
+            'group':group.serialize(),
+            'organizer':organizer.serialize_name(),
             'name':self.name,
             'location': self,location,
             'time': self.time, 
@@ -207,10 +214,13 @@ class Event(db.Model):
         }
 
     def serialize_for_group(self):
+        organizer = User.query.filter_by(id=self.organizer).first()
+        if organizer is None:
+            return None
         return{
             'id':self.id,
             'active':self.active,
-            'organizer':self.organizer,
+            'organizer':organizer.serialize_name(),
             'name':self.name,
             'location': self,location,
             'time': self.time

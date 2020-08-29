@@ -208,8 +208,8 @@ def get_event_by_id(event_id):
     return event.serialize()
 
 def get_events_in_group(group_id):
-    event = Event.query.filter_by(id=event_id).first()
-    if event is None:
+    group = Event.query.filter_by(id=group_id).first()
+    if group is None:
         return None
     return [m.serialize() for m in group.events]
 
