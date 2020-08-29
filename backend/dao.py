@@ -65,13 +65,13 @@ def get_group_by_id(group_id):
         return None
     return group.serialize()
 
-def create_group(name=None, organizer_id):
+def create_group(name=None, user_id):
     user = User.query.filter_by(id=user_id).first()
     if user is None:
         return None
     new_group = Group(
         name=name,
-        organizer=organizer_id #should is save id? or user itself?
+        organizer=user_id #should is save id? or user itself?
     )
     db.session.add(new_group)
     db.session.commit()
@@ -96,7 +96,7 @@ def remove_user_from_group(user_id, group_id):
     db.session.commit()
     return group.serialize()
 
-def update_group():
+def update_group(group_id, body):
     group = Group.query.filter_by(id=group_id).first()
     if group is None:
         return None
@@ -109,7 +109,7 @@ def delete_group(group_id):
     group = Group.query.filter_by(id=group_id).first()
     if group is None:
         return None
-    db.session.delete(groups)
+    db.session.delete(group)
     db.session.commit()
     return group.serialize()
 
@@ -127,17 +127,15 @@ def delete_group(group_id):
 def get_all_activities():
     return [w.serialize() for w in Activity.query.all()]
 
-def get_activity_by_id():
-    activity = Activity.query.filter_by(id=group_id).first()
-    if group is None:
+def get_activity_by_id(activity_id):
+    activity = Activity.query.filter_by(id=activity_id).first()
+    if activity is None:
         return None
-    return group.serialize()
+    return activity.serialize()
 
 def create_activity():
-    activity = Activity.query.filter_by(id=user_id).first()
-    if user is None:
-        return None
-    new_group = Group(
+    activity = Activity.query.filter_by(id=activity_id).first()
+    new_activity = Activity(
         name=name,
         organizer=organizer_id #should is save id? or user itself?
     )
