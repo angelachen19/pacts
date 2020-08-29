@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		16A669E224F9B0F800BC3232 /* Pacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A669E124F9B0F800BC3232 /* Pacts.storyboard */; };
 		16A669E424F9B23300BC3232 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A669E324F9B23300BC3232 /* EventsViewController.swift */; };
 		16A669E624F9B6EB00BC3232 /* DetailedEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A669E524F9B6EB00BC3232 /* DetailedEventsViewController.swift */; };
+		16A669E824FA003100BC3232 /* EventsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A669E724FA003100BC3232 /* EventsTableTableViewController.swift */; };
 		16A9020424F8B6BA0014D6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A9020324F8B6BA0014D6D8 /* AppDelegate.swift */; };
 		16A9020624F8B6BA0014D6D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A9020524F8B6BA0014D6D8 /* SceneDelegate.swift */; };
 		16A9020A24F8B6BC0014D6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A9020924F8B6BC0014D6D8 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		16A669E124F9B0F800BC3232 /* Pacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pacts.storyboard; sourceTree = "<group>"; };
 		16A669E324F9B23300BC3232 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = Pacts/EventsViewController.swift; sourceTree = SOURCE_ROOT; };
 		16A669E524F9B6EB00BC3232 /* DetailedEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedEventsViewController.swift; sourceTree = "<group>"; };
+		16A669E724FA003100BC3232 /* EventsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableTableViewController.swift; sourceTree = "<group>"; };
 		16A9020024F8B6BA0014D6D8 /* Pacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A9020324F8B6BA0014D6D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16A9020524F8B6BA0014D6D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +58,6 @@
 				82DFD51F77945E7F6A43E103 /* Pods-Pacts.debug.xcconfig */,
 				8F720776B0E069A43DA90669 /* Pods-Pacts.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +105,7 @@
 				16A9020524F8B6BA0014D6D8 /* SceneDelegate.swift */,
 				16A669E324F9B23300BC3232 /* EventsViewController.swift */,
 				16A669E524F9B6EB00BC3232 /* DetailedEventsViewController.swift */,
+				16A669E724FA003100BC3232 /* EventsTableTableViewController.swift */,
 				16A9020924F8B6BC0014D6D8 /* Assets.xcassets */,
 				16A9020E24F8B6BC0014D6D8 /* LaunchScreen.storyboard */,
 				16A9021124F8B6BC0014D6D8 /* Info.plist */,
@@ -246,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A669E824FA003100BC3232 /* EventsTableTableViewController.swift in Sources */,
 				16A9020424F8B6BA0014D6D8 /* AppDelegate.swift in Sources */,
 				16A669E624F9B6EB00BC3232 /* DetailedEventsViewController.swift in Sources */,
 				16A9020624F8B6BA0014D6D8 /* SceneDelegate.swift in Sources */,
