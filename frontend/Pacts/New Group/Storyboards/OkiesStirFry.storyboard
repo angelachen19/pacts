@@ -24,7 +24,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0r-vY-AI4">
                                                 <rect key="frame" x="30" y="30" width="354" height="28"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Okie's Stir Fry">
+                                                    <fragment content="CS 2110">
                                                         <attributes>
                                                             <font key="NSFont" size="24" name="Helvetica-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -37,9 +37,9 @@
                                                 <rect key="frame" x="30" y="103" width="354" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSl-8O-d9a">
-                                                        <rect key="frame" x="10" y="32" width="193" height="20"/>
+                                                        <rect key="frame" x="10" y="32" width="137" height="20"/>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="Hiking with Happy Dave">
+                                                            <fragment content="Picnic with Gries">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                                     <font key="NSFont" size="17" name="Helvetica-Bold"/>
