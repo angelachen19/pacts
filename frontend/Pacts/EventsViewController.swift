@@ -8,12 +8,16 @@
 
 import UIKit
 
-class EventsViewController: UIViewController {
 
+class EventsViewController: UIViewController{
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
     }
     
+
 
 }
