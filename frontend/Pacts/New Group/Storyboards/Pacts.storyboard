@@ -108,7 +108,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CXI-XS-bwh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HKd-rx-uZE"/>
+                    <navigationItem key="navigationItem" id="HKd-rx-uZE">
+                        <barButtonItem key="backBarButtonItem" title=" " id="P82-Uy-m29"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOz-pA-JCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -359,6 +361,7 @@
             <point key="canvasLocation" x="2891" y="535"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="Pacts" width="33" height="32"/>
         <image name="Profile" width="50" height="50"/>
