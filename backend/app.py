@@ -54,11 +54,11 @@ def update_user_by_id(user_id):
          return failure_response("User not found!")
     return success_response(user)
 
-#delete user@
+#delete user
 @app.route('/users/<int:user_id>/', methods=['DELETE'])
-def update_user_by_id(user_id):
+def delete_user_by_id(user_id):
     body = json.loads(request.data)
-    user = dao.update_user_by_id(user_id, body)
+    user = dao.delete_user_by_id(user_id, body)
     if user is None:
          return failure_response("User not found!")
     return success_response(user)
@@ -111,16 +111,53 @@ def remove_user_from_group(user_id, group_id):
     return success_response(group)
 
 #update group
+@app.route('/groups/<int:group_id>/', methods=['POST'])
+def update_group(group_id):
+    body = json.loads(request.data)
+    group = dao.update_group(group_id)
+    if group is None:
+        return failure_response('Group not found!')
+    return success_response(group)
 
 #delete group
-
+@app.route('/groups/<int:group_id>/', methods=['DELETE'])
+def delete_group_by_id(group_id):
+    group = dao.delete_group(group_id)
+    if group is None:
+        return failure_response('Group not found!')
+    return success_response(group)
 
 ######################################################################################################
 #Activity
 
 #get all activities
+@app.route('/activities/', methods=['GET'])
+def get_all_activities():
+    return success_response(dao.get_all_activities())
+
 #get activities by id
+@app.route('/activities/<int:activity_id>/', methods=['GET'])
+def get_activity_by_id(activity_id):
+    activity = dao.get_activity_by_id(activity_id)
+    if activity is None:
+        return failure_response('Activity not found!')
+    return success_response(activity)
+
 #create activity
+@app.route('/activities/', methods=['POST'])
+def create_activity():
+    body = json.loads(request.data)
+    activity = dao.create_activity(
+        name=body.get('name'),
+        category=body.get('category'),
+        timeofday=body.get('timeofday'),
+        weather=body.get('weather'),
+        minnumppl=body.get('minnumppl'),
+        maxnumppl=body.get('maxnumppl'),
+        location=body.get('location'),
+        description=body.get('description')
+    )
+
 #update activity
 #delete activity
 

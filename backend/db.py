@@ -8,10 +8,15 @@ association_table_usergrp = db.Table('association_usergrp', db.Model.metadata,
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
     )
 
-association_table_userevt = db.Table('association_userevt', db.Model.metadata,
+association_table_attevt = db.Table('association_userevt', db.Model.metadata,
     db.Column('event_id', db.Integer, db.ForeignKey('event.id')),
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
     )
+
+association_table_nattevt = db.Table('association_userevt', db.Model.metadata,
+    db.Column('event_id', db.Integer, db.ForeignKey('event.id')),
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
+    )   
 
     #many: db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     #one: db.relationship('Message', cascade='delete')
@@ -28,7 +33,9 @@ class User(db.Model):
     password = db.Column(db.String, nullable=False)  
     pfp = db.Column(db.String, nullable=False) 
     groups = db.relationship('Group', secondary=association_table_usergrp, back_populates='members')#many to many with 'groups'
-    events = db.relationship('Event', secondary=association_table_userevt, back_populates='members')#many to many with 'events'
+    events = db.relationship('Event', secondary=association_table_nattevt, back_populates='attending')#many to many with 'events'
+    #nevents = events they didnt attend, here for the table but never seriialized
+    nevents = db.relationship('Event', secondary=association_table_nattevt, back_populates='notattending')#many to many with 'events'
     # messages = db.relationship('Message', cascade='delete') #relationship one (user) to many (dms)
 
     def __init__(self, **kwargs):
@@ -79,7 +86,7 @@ class Group(db.Model):
             'name':self.name,
             'organizer': [s.serialize_name() for s in self.user] ,
             'members':  [s.serialize_name() for s in self.members],
-            'events': [s.serialize_name() for s in self.members] ,
+            'events': [s.serialize_name() for s in self.events] ,
             # 'messages':  #messages thing
             'polls': #polls thing
         }
@@ -87,6 +94,7 @@ class Group(db.Model):
 class Activity(db.Model):
     __tablename__='activity'
     id = db.Column(db.Integer, primary_key = True)
+    name = db.Column (db.String, nullable = False)
     category = db.Column (db.String, nullable = False)
     timeofday = db.Column (db.String, nullable = True)
     weather =  db.Column (db.String, nullable = True)
@@ -172,35 +180,47 @@ class Event(db.Model):
     __tablename__='event'
     id = db.Column(db.Integer, primary_key = True)
     active = db.Column(db.Boolean, nullable=False)
+    group = db.Column(db.Integer, db.ForeignKey('group.id'), nullable=False)
     organizer = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     name = db.Column(db.String, nullable=False)
     location =  db.Column(db.String, nullable=False) #address, or modality
     time = db.Column(db.String, nullable=False)
-    members = ('User', secondary=association_table_userevt, back_populates='events')
-    
+    attending = ('User', secondary=association_table_attevt, back_populates='events')
+    notattending = ('User', secondary=association_table_nattevt, back_populates='events')
+
     def __init__(self, **kwargs):
         self.active = True
+        self.group = kwargs.get('group', '')
         self.organizer = kwargs.get('organizer','')
         self.name = kwargs.get('name','')
         self.location = kwargs.get('location,','')
         self.time =  kwargs.get('time', '')
     
     def serialize(self):
+        organizer = User.query.filter_by(id=self.organizer).first()
+        group = User.query.filter_by(id=self.group).first()
+        if organizer is None or group is None:
+            return None
         return{ 
             'id':self.id,
             'active':self.active,
-            'organizer':self.organizer,
+            'group':group.serialize(),
+            'organizer':organizer.serialize_name(),
             'name':self.name,
             'location': self,location,
-            'time': self.time
-            'members': [s.serialize_name() for s in self.members]
+            'time': self.time, 
+            'attending': [s.serialize_name() for s in self.attending]
+            'notattending': [s.serialize_name() for s in self.notattending]
         }
 
     def serialize_for_group(self):
+        organizer = User.query.filter_by(id=self.organizer).first()
+        if organizer is None:
+            return None
         return{
             'id':self.id,
             'active':self.active,
-            'organizer':self.organizer,
+            'organizer':organizer.serialize_name(),
             'name':self.name,
             'location': self,location,
             'time': self.time

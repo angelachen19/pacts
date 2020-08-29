@@ -65,13 +65,13 @@ def get_group_by_id(group_id):
         return None
     return group.serialize()
 
-def create_group(name=None, organizer_id):
+def create_group(name=None, user_id):
     user = User.query.filter_by(id=user_id).first()
     if user is None:
         return None
     new_group = Group(
         name=name,
-        organizer=organizer_id #should is save id? or user itself?
+        organizer=user_id #should is save id? or user itself?
     )
     db.session.add(new_group)
     db.session.commit()
@@ -96,7 +96,7 @@ def remove_user_from_group(user_id, group_id):
     db.session.commit()
     return group.serialize()
 
-def update_group():
+def update_group(group_id, body):
     group = Group.query.filter_by(id=group_id).first()
     if group is None:
         return None
@@ -109,7 +109,7 @@ def delete_group(group_id):
     group = Group.query.filter_by(id=group_id).first()
     if group is None:
         return None
-    db.session.delete(groups)
+    db.session.delete(group)
     db.session.commit()
     return group.serialize()
 
@@ -127,26 +127,30 @@ def delete_group(group_id):
 def get_all_activities():
     return [w.serialize() for w in Activity.query.all()]
 
-def get_activity_by_id():
-    activity = Activity.query.filter_by(id=group_id).first()
-    if group is None:
+def get_activity_by_id(activity_id):
+    activity = Activity.query.filter_by(id=activity_id).first()
+    if activity is None:
         return None
-    return group.serialize()
+    return activity.serialize()
 
-def create_activity():
-    activity = Activity.query.filter_by(id=user_id).first()
-    if user is None:
-        return None
-    new_group = Group(
+def create_activity(name, category, timeofday, weather, minnumppl, maxnumppl, location, description):
+    activity = Activity.query.filter_by(id=activity_id).first()
+    new_activity = Activity(
         name=name,
-        organizer=organizer_id #should is save id? or user itself?
+        category=category,
+        timeofday=timeofday,
+        weather=weather,
+        minnumppl=minnumppl,
+        maxnumppl=maxnumppl,
+        location=location,
+        description=description
     )
-    db.session.add(new_group)
+    db.session.add(new_activity)
     db.session.commit()
-    return new_group.serialize()
+    return new_activity.serialize()
 
-def update_activity():
-    activity = Activity.query.filter_by(id=group_id).first()
+def update_activity(activity_id, body):
+    activity = Activity.query.filter_by(id=activity_id).first()
     if activity is None:
         return None
     activity.name = body.get("name", activity.name)
@@ -157,15 +161,15 @@ def update_activity():
     activity.location = body.get("location", activity.location)
     activity.description = body.get("description", activity.descriiption)
     db.session.commit()
-    return group.serialize()
+    return activity.serialize()
 
-def delete_activity():
+def delete_activity(activity_id):
     activity = Activity.query.filter_by(id=activity_id).first()
     if activity is None:
         return None
     db.session.delete(activity)
     db.session.commit()
-    return group.serialize()
+    return activity.serialize()
 
 ######################################################################################################
 #Message
@@ -197,17 +201,17 @@ def delete_activity():
 def get_all_events():
     return [w.serialize() for w in Event.query.all()]
 
-def get_event_by_id(event_id)
+def get_event_by_id(event_id):
     event = Event.query.filter_by(id=Event_id).first()
     if event is None:
         return None
     return event.serialize()
 
 def get_events_in_group(group_id):
-    event = Event.query.filter_by(id=event_id).first()
-    if event is None:
+    group = Event.query.filter_by(id=group_id).first()
+    if group is None:
         return None
-    return [m.serialize() for m in group.messages]
+    return [m.serialize() for m in group.events]
 
 def create_event(group_id, organizer_id, location, time):
     event = Event.query.filter_by(id=event_id).first()
@@ -228,5 +232,23 @@ def delete_event(event_id):
     if event is None:
         return None
     db.session.delete(event)
+    db.session.commit()
+    return event.serialize()
+
+def add_vote(event_id, user_id):
+    event = Event.query.filter-by(id=event_id).first()
+    user = User.query.filter_by(id=user_id).first()
+    if user is None or event is None:
+        return None
+    event.attending.append(user)
+    db.session.commit()
+    return event.serialize()
+
+def remote_vote(event_id, user_id):
+    event = Event.query.filter-by(id=event_id).first()
+    user = User.query.filter_by(id=user_id).first()
+    if user is None or event is None:
+        return None
+    event.notattending.append(user)
     db.session.commit()
     return event.serialize()
