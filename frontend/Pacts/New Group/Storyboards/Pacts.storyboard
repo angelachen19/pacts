@@ -34,54 +34,8 @@
                                     <constraint firstAttribute="height" constant="30" id="yCs-hI-LTu"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dL8-QW-rQX">
-                                <rect key="frame" x="42" y="272.5" width="330" height="230"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4J-mM-Di9">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="230"/>
-                                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="VlL-6L-BLL"/>
-                                            <constraint firstAttribute="height" constant="230" id="adu-Aa-Hht"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                        <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="CS 2110">
-                                            <color key="titleColor" red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="dCe-oK-PAh" kind="show" id="cQa-Ca-Wtx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bey-5L-wZb">
-                                        <rect key="frame" x="180" y="0.0" width="150" height="230"/>
-                                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="1LZ-o6-Phz"/>
-                                            <constraint firstAttribute="height" constant="230" id="JsJ-Io-n6M"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                        <state key="normal" title="Okie's Stir Fry">
-                                            <color key="titleColor" red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="y6r-Mc-eWS" kind="show" id="7lt-bf-9AA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpy-Sp-oey">
-                                <rect key="frame" x="354" y="763" width="30" height="30"/>
+                                <rect key="frame" x="354" y="2773" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.71764705880000002" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="6wL-Pa-0u1"/>
@@ -94,17 +48,39 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVp-45-ZX4">
+                                <rect key="frame" x="52" y="191" width="83" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Pact 2@10x" translatesAutoresizingMaskIntoConstraints="NO" id="Cgd-ZW-pUh">
+                                <rect key="frame" x="15" y="179" width="187" height="263"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="244" id="cVd-9o-ez4"/>
+                                    <constraint firstAttribute="width" constant="168" id="sAF-4z-3n9"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pact 1" translatesAutoresizingMaskIntoConstraints="NO" id="2ZE-7B-hAu">
+                                <rect key="frame" x="236" y="173" width="168" height="2350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="244" id="A6U-aa-bON"/>
+                                    <constraint firstAttribute="width" constant="168" id="aAA-cc-rqB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Pix-xl-qpV" firstAttribute="leading" secondItem="CXI-XS-bwh" secondAttribute="leading" constant="30" id="1TM-ct-ICp"/>
-                            <constraint firstItem="dL8-QW-rQX" firstAttribute="top" secondItem="Pix-xl-qpV" secondAttribute="bottom" constant="110" id="3Rt-Ga-jnC"/>
+                            <constraint firstItem="Cgd-ZW-pUh" firstAttribute="leading" secondItem="CXI-XS-bwh" secondAttribute="leading" constant="15" id="Fes-DO-V3D"/>
+                            <constraint firstItem="Pix-xl-qpV" firstAttribute="leading" secondItem="CXI-XS-bwh" secondAttribute="leading" constant="30" id="GEx-Xp-luy"/>
+                            <constraint firstItem="CXI-XS-bwh" firstAttribute="trailing" secondItem="3aK-cB-hMH" secondAttribute="trailing" constant="20" id="HxG-8Q-Sub"/>
                             <constraint firstItem="CXI-XS-bwh" firstAttribute="bottom" secondItem="mpy-Sp-oey" secondAttribute="bottom" constant="20" id="Lkv-zG-2IH"/>
                             <constraint firstItem="3aK-cB-hMH" firstAttribute="top" secondItem="CXI-XS-bwh" secondAttribute="top" constant="40" id="SyY-LK-Hrq"/>
+                            <constraint firstItem="mpy-Sp-oey" firstAttribute="top" secondItem="2ZE-7B-hAu" secondAttribute="bottom" constant="250" id="T4U-qv-7fI"/>
                             <constraint firstItem="CXI-XS-bwh" firstAttribute="trailing" secondItem="mpy-Sp-oey" secondAttribute="trailing" constant="30" id="TN8-m6-uMw"/>
-                            <constraint firstItem="Pix-xl-qpV" firstAttribute="top" secondItem="CXI-XS-bwh" secondAttribute="top" constant="40" id="eg7-t1-Vwo" userLabel="Pacts.top = Safe Area.top + 20"/>
-                            <constraint firstItem="dL8-QW-rQX" firstAttribute="centerX" secondItem="afx-HT-bOP" secondAttribute="centerX" id="sCK-z4-PQm"/>
-                            <constraint firstItem="CXI-XS-bwh" firstAttribute="trailing" secondItem="3aK-cB-hMH" secondAttribute="trailing" constant="20" id="zju-Kb-Y3O"/>
+                            <constraint firstItem="Pix-xl-qpV" firstAttribute="top" secondItem="CXI-XS-bwh" secondAttribute="top" constant="40" id="aA2-Xq-kpg"/>
+                            <constraint firstItem="Cgd-ZW-pUh" firstAttribute="top" secondItem="Pix-xl-qpV" secondAttribute="bottom" constant="15" id="aoz-T3-bWJ"/>
+                            <constraint firstItem="2ZE-7B-hAu" firstAttribute="top" secondItem="3aK-cB-hMH" secondAttribute="bottom" constant="15" id="kSL-rd-tdh"/>
+                            <constraint firstItem="CXI-XS-bwh" firstAttribute="trailing" secondItem="2ZE-7B-hAu" secondAttribute="trailing" constant="10" id="ksT-p9-Yf0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CXI-XS-bwh"/>
                     </view>
@@ -159,6 +135,8 @@
     </scenes>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
+        <image name="Pact 1" width="1600" height="2350"/>
+        <image name="Pact 2@10x" width="1600" height="2350"/>
         <image name="Pacts" width="33" height="32"/>
         <image name="Profile" width="50" height="50"/>
         <image name="plus button" width="34" height="34"/>
